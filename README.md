@@ -10,3 +10,4 @@ Repository is used for a multiplayer game. Game is created for the GIMM 400 clas
 Using Unity Game Engines
 LTS Release 2017.4.10f1
 Released: 24 August 2018
+https://unity3d.com/unity/qa/lts-releases
