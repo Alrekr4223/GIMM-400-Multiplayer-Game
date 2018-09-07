@@ -1,0 +1,9 @@
+
+
+This is a reference file for Git Bash Commands -> 
+
+git clone <url>
+git pull origin <branchname>
+git add *  or git add <specific file(s)>
+git commit -m "<message describing change>"
+git push origin <branchname>
