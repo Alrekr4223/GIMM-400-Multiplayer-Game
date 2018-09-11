@@ -16,9 +16,9 @@ This project was created to assist GIMM 400 students in understsanding the conce
 
 <h1> Installation </h1>
 
-Unity Development Engine. 
-LTS Release 2017.4.10f1
-Released: 24 August 2018
-https://unity3d.com/unity/qa/lts-releases
+Unity Development Engine. <br>
+LTS Release 2017.4.10f1 <br>
+Released: 24 August 2018 <br>
+https://unity3d.com/unity/qa/lts-releases <br>
 
 
