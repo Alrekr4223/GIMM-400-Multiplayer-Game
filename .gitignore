@@ -7,9 +7,15 @@
 Assets/AssetStoreTools*
 
 #Our Folders
-Assets/[Gg]aia
-Assets/[Ee]xternalAssets
-Assets/[Ss]etObjects
+Assets/[Gg]aia/
+Assets/[Ee]xternalAssets/
+Assets/[Ss]etObjects/
+Assets/[Gg]aia*
+Assets/[Ee]xternalAssets*
+Assets/[Ss]etObjects*
+[Gg]aia/
+[Ee]xternalAssets/
+[Ss]etObjects/
 
 # Visual Studio cache directory
 .vs/
