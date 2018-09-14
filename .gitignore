@@ -1,9 +1,15 @@
+#General Folders
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+
+#Our Folders
+Assets/[Gg]aia
+Assets/[Ee]xternalAssets
+Assets/[Ss]etObjects
 
 # Visual Studio cache directory
 .vs/
