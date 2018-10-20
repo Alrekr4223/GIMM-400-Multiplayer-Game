@@ -41,8 +41,9 @@ public class HostileStormCastle : HostileState {
         hostileController.ChangeColor(Color.blue);
         hostileController.m_Agent.speed = 5;
         hostileController.m_Agent.destination = hostileController.m_TargetDestination.position;
+        hostileController.gameObject.GetComponent<Animator>().Play("HostileRun");
 
-        
+
     }
 
     // Use this for initialization

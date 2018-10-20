@@ -15,6 +15,11 @@ public class PlayerController : NetworkBehaviour {
     public Transform m_BulletSpawn;
 	
 	void Start () {
+
+        if (!isLocalPlayer)
+        {
+            GetComponent<PlayerController>().enabled = false;
+        }
 		
 	}
 

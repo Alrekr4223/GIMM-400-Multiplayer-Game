@@ -14,7 +14,7 @@ public class HostileAggro : HostileState {
             hostileController.SetState(new HostileStormCastle(hostileController));
 
         }
-        if (Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, hostileController.transform.position) < 3)
+        if (Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, hostileController.transform.position) < 6)
         {
             hostileController.SetState(new HostileKill(hostileController));
         }
@@ -29,7 +29,8 @@ public class HostileAggro : HostileState {
         Debug.Log("Aggro on Player");
         hostileController.ChangeColor(Color.red);
         hostileController.m_Agent.speed = 10;
-        
+        hostileController.gameObject.GetComponent<Animator>().Play("HostileRun");
+
     }
 
 

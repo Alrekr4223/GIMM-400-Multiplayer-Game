@@ -14,7 +14,7 @@ public class HostileKill : HostileState {
     public override void CheckTransition()
     {
 
-        if (Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, hostileController.transform.position) > 3)
+        if (Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, hostileController.transform.position) > 8)
         {
             hostileController.SetState(new HostileAggro(hostileController));
         }
@@ -29,6 +29,21 @@ public class HostileKill : HostileState {
         Debug.Log("Attacking Player!!!");
         hostileController.ChangeColor(Color.yellow);
         hostileController.m_Agent.speed = 2;
+
+        float rand = Mathf.Round(Random.Range(0, 3));
+        int notRand = int.Parse(rand.ToString());
+        Debug.Log("Rand: " + rand);
+
+        switch (notRand) {
+            case 0:
+                hostileController.gameObject.GetComponent<Animator>().Play("HostileAttack1");
+                break;
+            case 1:
+                hostileController.gameObject.GetComponent<Animator>().Play("HostileAttack3");
+                break;
+        }
+                
+        
 
     }
 

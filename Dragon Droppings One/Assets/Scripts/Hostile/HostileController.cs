@@ -10,7 +10,7 @@ public class HostileController : MonoBehaviour {
     public NavMeshAgent m_Agent;
 
     public GameObject[] hostiles;
-    private float detectionRange = 30;
+    private float detectionRange = 20;
     public GameObject hostileToChase;
 
 
@@ -86,7 +86,7 @@ public class HostileController : MonoBehaviour {
             currentState.OnStateExit();
         }
         currentState = f_state;
-        this.gameObject.name = "This Object is in the state: " + f_state.GetType().Name;
+        //this.gameObject.name = "This Object is in the state: " + f_state.GetType().Name;
         if (currentState != null)
         {
             currentState.OnStateEnter();
