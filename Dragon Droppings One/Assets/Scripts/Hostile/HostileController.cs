@@ -86,7 +86,7 @@ public class HostileController : MonoBehaviour {
             currentState.OnStateExit();
         }
         currentState = f_state;
-        //this.gameObject.name = "This Object is in the state: " + f_state.GetType().Name;
+
         if (currentState != null)
         {
             currentState.OnStateEnter();
