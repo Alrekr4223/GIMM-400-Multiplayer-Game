@@ -23,7 +23,11 @@ public class BulletType : MonoBehaviour {
             Debug.Log("Bullet found hostile: " + other.gameObject.name);
             GameObject hostile = other.gameObject;
             hostile.GetComponent<HostileController>().HostileDamaged(100);
-            Destroy(this.gameObject);
+
+            //Hide Poop, Start poop splat particles, kill whole object after 1 second.
+            this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+            this.gameObject.transform.Find("PoopSplat").GetComponent<ParticleSystem>().Play();
+            Destroy(this.gameObject, 1);
 
         }
     }

@@ -27,7 +27,7 @@ public class HostileAggro : HostileState {
     public override void OnStateEnter() //Only On trigger enter
     {
         Debug.Log("Aggro on Player");
-        hostileController.ChangeColor(Color.red);
+        //hostileController.ChangeColor(Color.red);
         hostileController.m_Agent.speed = 10;
         hostileController.gameObject.GetComponent<Animator>().Play("HostileRun");
 

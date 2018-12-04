@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -19,11 +20,16 @@ public class GameManager : MonoBehaviour {
     {
         Debug.Log("You've lost!!");
         //Transition to end screen.
+
+        SceneManager.LoadScene("Loose");
+
     }
 
     public void GameWin()
     {
         Debug.Log("You've Won!");
         //Transition to end screen.
+
+        SceneManager.LoadScene("Win");
     }
 }

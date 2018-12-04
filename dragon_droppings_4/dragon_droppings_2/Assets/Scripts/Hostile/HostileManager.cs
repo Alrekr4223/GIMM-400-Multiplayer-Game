@@ -44,6 +44,12 @@ public class HostileManager : MonoBehaviour {
             m_GM.GameWin();
         }
 
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SpawnHostile(m_MaxHostiles);
+        }
+
 	}
 
 

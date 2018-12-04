@@ -26,10 +26,11 @@ public class PlayerController : NetworkBehaviour
         var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
         var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f * 3f;
 
-        transform.Rotate(0, x, 0);
-        transform.Translate(0, 0, z);
+        //transform.Rotate(0, x, 0);
+        //transform.Translate(0, 0, z);
 
-        if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        //if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0))
         {
             CmdFire();
         }
@@ -52,7 +53,7 @@ public class PlayerController : NetworkBehaviour
             bulletSpawn.rotation);
 
         // Add velocity to the bullet
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 60;
+        bullet.GetComponent<Rigidbody>().velocity = Camera.main.transform.forward * 60;
 
         NetworkServer.Spawn(bullet);
 
@@ -62,7 +63,7 @@ public class PlayerController : NetworkBehaviour
 
     public override void OnStartLocalPlayer()
     {
-        GetComponent<MeshRenderer>().material.color = Color.blue;
+        //GetComponent<MeshRenderer>().material.color = Color.blue;
     }
 
 

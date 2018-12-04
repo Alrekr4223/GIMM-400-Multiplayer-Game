@@ -25,7 +25,7 @@ public class HostileKill : HostileState {
     public override void OnStateEnter() //Only On trigger enter
     {
         Debug.Log("Attacking Player!!!");
-        hostileController.ChangeColor(Color.yellow);
+        //hostileController.ChangeColor(Color.yellow);
         hostileController.m_Agent.speed = 2;
 
         float rand = Mathf.Round(Random.Range(0, 3));

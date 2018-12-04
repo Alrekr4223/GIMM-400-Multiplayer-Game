@@ -38,7 +38,7 @@ public class HostileStormCastle : HostileState {
     public override void OnStateEnter()
     {
         Debug.Log("Storming Castle");
-        hostileController.ChangeColor(Color.blue);
+        //hostileController.ChangeColor(Color.blue);
         hostileController.m_Agent.speed = 15f;
         hostileController.m_Agent.destination = hostileController.m_TargetDestination.position;
         hostileController.gameObject.GetComponent<Animator>().Play("HostileRun");
