@@ -9,10 +9,14 @@ public class SceneChanger : MonoBehaviour {
 
     public Button m_playButton;
 
+    public AudioClip m_Audio;
+
     // Use this for initialization
     void Start () {
-		
-	}
+        gameObject.GetComponent<AudioSource>().clip = m_Audio;
+        gameObject.GetComponent<AudioSource>().Play(0);
+
+    }
 	
 	// Update is called once per frame
 	void Update () {

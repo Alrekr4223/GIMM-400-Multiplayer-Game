@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
+using System.Collections;
 
 public class PlayerController : NetworkBehaviour
 {
@@ -7,6 +8,14 @@ public class PlayerController : NetworkBehaviour
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
     public float m_Health;
+
+    public AudioClip m_PlayerGotHit;
+    public AudioClip m_FireWeapon;
+    
+
+    private bool shootTimerComplete = true;
+
+    private UIManager m_UIManager;
     
 
     private void Start()
@@ -15,6 +24,8 @@ public class PlayerController : NetworkBehaviour
         transform.rotation = Quaternion.identity;
 
         m_Health = 100; // Default, Hard coded number will change
+
+        m_UIManager = FindObjectOfType<UIManager>();
     }
 
     void Update()
@@ -23,22 +34,32 @@ public class PlayerController : NetworkBehaviour
         {
             return;
         }
-        var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
-        var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f * 3f;
+        
 
-        //transform.Rotate(0, x, 0);
-        //transform.Translate(0, 0, z);
-
-        //if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
-        if(Input.GetMouseButtonDown(0))
+        //Fire Weapon
+        if(Input.GetMouseButtonDown(0) && shootTimerComplete)
         {
-            CmdFire();
+            if(m_UIManager.m_AmmoAmount > 0)
+            {
+                CmdFire();
+                m_UIManager.ModifyAmmo(-1);
+                gameObject.GetComponent<AudioSource>().clip = m_FireWeapon;
+                gameObject.GetComponent<AudioSource>().Play(0);
+            }
+            else
+            {
+                m_UIManager.NoAmmo();
+            }
+            
+            shootTimerComplete = false;
+            StartCoroutine(Wait(1));
         }
 
         if(m_Health <= 0)
         {
             //Reset Player back to start location
             this.gameObject.transform.position = FindObjectOfType<NetworkStartPosition>().transform.position;
+            m_UIManager.ResetVigette();
             m_Health = 100;
         }
     }
@@ -70,6 +91,17 @@ public class PlayerController : NetworkBehaviour
     public void RemoveHealth(float amount)
     {
         m_Health -= amount;
+        m_UIManager.MoreVigette();
         Debug.Log("You've been hurt! Current Health: " + m_Health);
+        gameObject.GetComponent<AudioSource>().clip = m_PlayerGotHit;
+        gameObject.GetComponent<AudioSource>().Play(0);
+    }
+
+
+
+    IEnumerator Wait(float length)
+    {
+        yield return new WaitForSeconds(length);
+        shootTimerComplete = true;
     }
 }

@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114812853928413560}
   - component: {fileID: 54858898253398904}
   - component: {fileID: 114232200780431770}
+  - component: {fileID: 82282677665313546}
   m_Layer: 0
   m_Name: PoopBullet
   m_TagString: Untagged
@@ -157,6 +158,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.021130072, y: 0.022051081, z: 0.017024465}
   m_Center: {x: 0.00000079581525, y: 0.00032897663, z: 0.009049414}
+--- !u!82 &82282677665313546
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1460226712134590}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114232200780431770
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -168,6 +249,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2579a714ce071004a959e3c97b5efc6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ProjectileDamage: 50
+  m_allAudioClips:
+  - {fileID: 8300000, guid: a959a1e5a6ca05f478e1729869450aa4, type: 3}
+  - {fileID: 8300000, guid: 81540d84f04cc344b9ba5c2ee725a9ee, type: 3}
+  - {fileID: 8300000, guid: a13fc907166ea5d47afecbb7639a9b34, type: 3}
+  - {fileID: 8300000, guid: 31aa546a8cae9a542989f9ad83229f3c, type: 3}
+  m_allParticleSystems:
+  - {fileID: 198203482674344646, guid: 4e9db350a7ee2a64cb67907e111e8a57, type: 2}
+  - {fileID: 198148518510558842, guid: b486b0424b4d8a146af990173baeec06, type: 2}
+  - {fileID: 198533306653394476, guid: 3892577795187de4eb7b9eb7ccb1ec37, type: 2}
+  - {fileID: 198776449973636136, guid: 6938f8c112aaf06489a2a59e20bae615, type: 2}
+  m_AmmoType: 
+  m_CurrentAudioClip: {fileID: 8300000, guid: a959a1e5a6ca05f478e1729869450aa4, type: 3}
+  m_CurrentParticleSystem: {fileID: 198203482674344646, guid: 4e9db350a7ee2a64cb67907e111e8a57,
+    type: 2}
 --- !u!114 &114812853928413560
 MonoBehaviour:
   m_ObjectHideFlags: 1
